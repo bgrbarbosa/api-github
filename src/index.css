@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --dsc-color-bg-primary: #e8e8e8;
+    --dsc-color-bg-secondary:  #1890FF;
+
+    --dsc-color-bg-tertiary: #E6F7FF;
+    --dsc-color-bg-quaternary: #F5F5F5;
+  
+    --dsc-color-font-primary: #000000;
+    --dsc-color-font-secondary: #FFFFFF;
+    --dsc-color-font-tertiary: #7E7E7E;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto";
+  }
+
+

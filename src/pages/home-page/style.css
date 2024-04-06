@@ -1,0 +1,29 @@
+.container-home {
+    padding-left: 41px;
+}
+
+.title {
+    margin-top: 27px;
+    font-family: Roboto;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 64px;
+    letter-spacing: 0.02em;
+    text-align: left;
+
+    color: var(--dsc-color-font-primary);
+}
+
+.sub-title {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0.02em;
+    text-align: left;
+
+    color: var(--dsc-color-font-tertiary);
+    margin-bottom: 27px;
+}
+
+

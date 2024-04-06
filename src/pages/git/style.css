@@ -1,0 +1,99 @@
+.container-page-git {
+    padding-left: 90px;
+    padding: 54px 90px 0 54px;
+}
+
+.container-search {
+    width: 1251px;
+    height: 270px;
+    gap: 0px;
+    border-radius: 16px 16px 16px 16px;
+    opacity: 0px;
+
+    background-color: var(--dsc-color-bg-tertiary);
+    padding: 54px 718px 170px 31px;
+}
+
+.title-search {
+    width: 502px;
+    height: 46px;
+    top: 54px;
+    left: 31px;
+    gap: 0px;
+    opacity: 0px;
+
+    font-family: Roboto;
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 46px;
+    text-align: left;
+
+    color: var(--dsc-color-font-primary);
+}
+
+.input-search {
+    width: 298px;
+    height: 40px;
+    top: 112px;
+    left: 31px;
+    gap: 0px;
+    opacity: 0px;
+
+    margin-top: 12px;
+    margin-bottom: 24px;
+    padding: 8px 27px 8px 17px;
+}
+
+.container-link {
+    width: 101px;
+    height: 40px;
+    top: 220px;
+    left: 41px;
+    gap: 0px;
+    border-radius: 4px 4px 4px 4px;
+    opacity: 0px;
+
+    background-color: var(--dsc-color-bg-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: none;
+    text-align: center;
+    color: var(--dsc-color-font-secondary);
+}
+
+.container-link :hover {
+    animation-duration: 0ms;
+}
+
+h5 {
+    width: 872px;
+    height: 40px;
+    gap: 0px;
+    border-radius: 4px 0px 0px 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    background-color: var(--dsc-color-font-secondary);
+    color: var(--dsc-color-font-tertiary);
+    margin-bottom: 8px;
+    padding: 8px 0 8px 10px;
+
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;    
+}
+
+span {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;   
+}
