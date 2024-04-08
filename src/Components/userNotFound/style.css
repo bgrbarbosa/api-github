@@ -1,0 +1,15 @@
+.container-user-notFount {
+    margin-top: 64px;
+
+}
+
+.container-user-notFount h1 {
+    font-family: Roboto;
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 46px;
+    text-align: left;
+
+    color: var(--dsc-color-font-primary);
+
+}

@@ -1,39 +1,49 @@
-import { Link } from "react-router-dom";
 import './style.css';
+import Result from "../../Components/result";
+import { useState } from "react";
 import { UserDTO } from "../../model/user";
+import * as userService from '../../services/user-service';
+import UserNotFound from '../../Components/userNotFound';
 
+type FormData = {
+    name: string;
+}
 
-export default function PageGit(){
-    
-    const user: UserDTO = {
-        url: "https://api.github.com/users/acenelio",
-        followers:12,
-        location:"Brazil",
-        name:"Nelio Alves",
-        avatar_url:"https://avatars.githubusercontent.com/u/13897257?v=4"
-    };
-    
+export default function PageGit() {
+
+    const [formData, setFormData] = useState<FormData>({
+        name: ''
+    });
+
+    const [user, setUser] = useState<UserDTO>();
+
+    function handleSearchUser(event: any) {
+        setFormData({ ...FormData, name: event.target.value })
+    }
+
+    function searchUser() {
+        userService.findByName(formData.name)
+            .then(response => {
+                setUser(response?.data);
+            })
+            .catch(() => {
+                
+            });
+    }
+
     return (
-        <div className="container-page-git">            
+        <div className="container-page-git">
             <div className="container-search">
                 <h1 className="title-search">Encontre um perfil GitHub</h1>
-                <input className="input-search" type="text" placeholder="Digite o usuário do github"/>
-                <Link to='#' className="container-link">Encontrar</Link>
+                <input className="input-search"
+                    name="name" type="text" value={formData.name}
+                    placeholder="Digite o usuário do github"
+                    onChange={handleSearchUser} />
+                <button className="container-link" onClick={searchUser}>Encontrar</button>
             </div>
-            
-            <div className="container-result">
-                <div className="container-picture">
-                    <img src={user.avatar_url} />
-                </div>
-
-                <div className="container-data">
-                    <h1 className="title-card-data">Informações</h1>
-                    <h5>Perfil: <span>{user.url}</span></h5>
-                    <h5>Seguidores: <span>{user.followers}</span></h5>
-                    <h5>localidade: <span>{user.location}</span></h5>
-                    <h5>Nome: <span>{user.name}</span></h5>
-                </div>
-            </div>
+            {
+                user ? <Result user={user}/> : <UserNotFound/> 
+            }
         </div>
     );
 }
