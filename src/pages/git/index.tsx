@@ -1,6 +1,6 @@
 import './style.css';
 import Result from "../../Components/result";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { UserDTO } from "../../model/user";
 import * as userService from '../../services/user-service';
 import UserNotFound from '../../Components/userNotFound';
@@ -17,22 +17,31 @@ export default function PageGit() {
 
     const [user, setUser] = useState<UserDTO>();
 
+    const [aux, setAux] = useState('');
+
     function handleSearchUser(event: any) {
         setFormData({ ...FormData, name: event.target.value })
     }
 
+    useEffect(() => {
+        searchUser;
+    }, [aux]);
+
     function searchUser() {
+        setUser(undefined)
+        setAux(formData.name);
         userService.findByName(formData.name)
             .then(response => {
                 setUser(response?.data);
             })
             .catch(() => {
-                
+
             });
     }
 
     return (
         <div className="container-page-git">
+
             <div className="container-search">
                 <h1 className="title-search">Encontre um perfil GitHub</h1>
                 <input className="input-search"
@@ -42,8 +51,9 @@ export default function PageGit() {
                 <button className="container-link" onClick={searchUser}>Encontrar</button>
             </div>
             {
-                user ? <Result user={user}/> : <UserNotFound/> 
+                user ? <Result user={user} /> : <UserNotFound/>
             }
+            
         </div>
     );
 }
